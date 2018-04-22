@@ -88,5 +88,15 @@ namespace Resilient.Http
         }
     }
 
+    public class PolicyManager
+    {
+        private ConcurrentDictionary<string, PolicyWrap> policyWrappers;
+
+        public void AddPolicy(string origin, PolicyWrap policy)
+        {
+
+        }
+    }
+
     public delegate IAuthenticationBehave AuthenticationBehaveFactory(AuthenticationMethodTypes authenticationMethodType);
 }

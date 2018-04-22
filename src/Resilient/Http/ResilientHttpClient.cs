@@ -56,7 +56,8 @@ namespace Resilient.Http
 
             // Executes the action applying all 
             // the policies defined in the wrapper
-            return await policyWrap.ExecuteAsync(action, new Context(normalizedOrigin));
+            // return await policyWrap.ExecuteAsync(action, new Context(normalizedOrigin));
+            throw new NotImplementedException();
         }
 
         private static string NormalizeOrigin(string origin)
@@ -85,12 +86,6 @@ namespace Resilient.Http
                     throw new NotSupportedException(type.ToString());
             }
         }
-    }
-
-    public enum AuthenticationMethodTypes
-    {
-        Bearer = 1,
-        OpenId = 2,
     }
 
     public delegate IAuthenticationBehave AuthenticationBehaveFactory(AuthenticationMethodTypes authenticationMethodType);

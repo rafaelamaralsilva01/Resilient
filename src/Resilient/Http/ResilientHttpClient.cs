@@ -89,21 +89,4 @@ namespace Resilient.Http
     }
 
     public delegate IAuthenticationBehave AuthenticationBehaveFactory(AuthenticationMethodTypes authenticationMethodType);
-
-    public interface IAuthenticationBehave
-    {
-        void Prepare(HttpRequestMessage request);
-    }
-
-    public interface IBearerAuthenticateBehave : IAuthenticationBehave
-    {
-    }
-
-    public class BearerAuthenticateBehave : IBearerAuthenticateBehave
-    {
-        public void Prepare(HttpRequestMessage request)
-        {
-            throw new NotImplementedException();
-        }
-    }
 }

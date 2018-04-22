@@ -6,6 +6,7 @@ namespace Resilient.Http
 {
     public enum AuthenticationMethodTypes
     {
+        None = 0,
         Bearer = 1,
         OpenId = 2,
     }

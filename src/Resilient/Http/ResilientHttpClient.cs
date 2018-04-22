@@ -78,6 +78,8 @@ namespace Resilient.Http
         {
             switch (type)
             {
+                case AuthenticationMethodTypes.None:
+                    return NoneAuthenticationBehave.Instance; 
                 case AuthenticationMethodTypes.Bearer:
                     return new BearerAuthenticateBehave();
                 case AuthenticationMethodTypes.OpenId:
@@ -85,16 +87,6 @@ namespace Resilient.Http
                 default:
                     throw new NotSupportedException(type.ToString());
             }
-        }
-    }
-
-    public class PolicyManager
-    {
-        private ConcurrentDictionary<string, PolicyWrap> policyWrappers;
-
-        public void AddPolicy(string origin, PolicyWrap policy)
-        {
-
         }
     }
 
